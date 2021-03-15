@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 *,
 *::before,
 *::after {
@@ -5,5 +7,115 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: "Montserrat Alternates";
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.header__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  text-decoration: none;
+  color: red;
+  font-weight: 900;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: cursive, sans-serif;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  padding: 10px;
+}
+
+.logo:hover {
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
+}
+
+.logo:hover span:nth-child(1) {
+  opacity: 1;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+.logo span {
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  display: inline-block;
+}
+
+.logo span:nth-child(1) {
+  opacity: 0;
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+}
+
+.logo span:nth-child(2) {
+  position: relative;
+  color: #d2e001;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.menu__item {
+  list-style: none;
+}
+
+.menu__item + .menu__item {
+  margin-left: 30px;
+}
+
+.menu__link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.social i + i {
+  margin-right: 5px;
 }
 /*# sourceMappingURL=style.css.map */
