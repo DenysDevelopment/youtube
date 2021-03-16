@@ -52,6 +52,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+
+    @media (max-width: 780px) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -64,11 +68,17 @@ body {
   font-family: cursive, sans-serif;
   transition: transform 0.3s;
   padding: 10px;
-  &:hover {
-    transform: translateX(40px);
-    span:nth-child(1) {
-      opacity: 1;
-      transform: translateX(-10px);
+
+  @media (max-width: 780px) {
+    margin-bottom: 10px;
+  }
+  @media (min-width: 997px) {
+    &:hover {
+      transform: translateX(40px);
+      span:nth-child(1) {
+        opacity: 1;
+        transform: translateX(-10px);
+      }
     }
   }
   span {
@@ -76,8 +86,11 @@ body {
     display: inline-block;
   }
   span:nth-child(1) {
-    opacity: 0;
-    transform: translateX(20px);
+    margin-right: 5px;
+    @media (min-width: 997px) {
+      opacity: 0;
+      transform: translateX(20px);
+    }
   }
   span:nth-child(2) {
     position: relative;
@@ -88,10 +101,19 @@ body {
 .menu {
   display: flex;
   align-items: center;
+
+  @media (max-width: 780px) {
+    flex-direction: column;
+  }
+
   // .menu__list
   &__list {
     display: flex;
     align-self: center;
+
+    @media (max-width: 580px) {
+      display: none;
+    }
   }
   // .menu__item
   &__item {
@@ -99,8 +121,10 @@ body {
     list-style: none;
     align-self: center;
 
-    &:hover::before {
-      transform: scale(1);
+    @media (min-width: 997px) {
+      &:hover::before {
+        transform: scale(1);
+      }
     }
 
     &::before {
@@ -125,6 +149,9 @@ body {
 
     & + & {
       margin-left: 30px;
+      @media (max-width: 850px) {
+        margin-left: 10px;
+      }
     }
   }
   // .menu__link
@@ -151,6 +178,19 @@ body {
   width: 50px;
   height: 22px;
   margin-left: 50px;
+
+  @media (max-width: 780px) {
+    order: -1;
+
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 480px) {
+    order: -1;
+
+    margin: 0;
+  }
 }
 
 .switch input {
@@ -199,6 +239,10 @@ input:checked + .slider:before {
 
 .hello {
   padding: 100px 0;
+
+  @media (max-width: 900px) {
+    text-align: center;
+  }
   // .hello__body
   &__body {
     display: flex;
@@ -214,9 +258,23 @@ input:checked + .slider:before {
     font-size: 1.2em;
     margin-bottom: 25px;
     line-height: 1.5em;
+
+    @media (max-width: 900px) {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+
+    @media (max-width: 900px) {
+      justify-content: center;
+    }
   }
   // .hello__btn
   &__btn {
+    display: block;
     & + & {
       margin-left: 20px;
     }
@@ -229,6 +287,10 @@ input:checked + .slider:before {
   // .heallo__img
   &__img {
     flex: 1 1 50%;
+
+    @media (max-width: 900px) {
+      display: none;
+    }
   }
 }
 
