@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+*:focus-visible {
+  outline: 2px solid $base-color;
+}
+
 html,
 body {
   font-size: 16px;
@@ -37,6 +41,7 @@ body {
   margin: 0 auto;
 }
 
+//==================================================================================================
 .header {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   transition: all 0.3s;
@@ -128,6 +133,7 @@ body {
     color: inherit;
     font-weight: 700;
     font-size: 1em;
+    padding: 0.5em 1em;
   }
 }
 
@@ -188,3 +194,66 @@ input:focus + .slider {
 input:checked + .slider:before {
   transform: translateX(26px);
 }
+
+//==================================================================================================
+
+.hello {
+  padding: 100px 0;
+  // .hello__body
+  &__body {
+    display: flex;
+    justify-content: space-between;
+  }
+  // .hello__title
+  &__title {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  // .hello__description
+  &__description {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    line-height: 1.5em;
+  }
+  // .hello__btn
+  &__btn {
+    & + & {
+      margin-left: 20px;
+    }
+  }
+
+  // .heallo__content
+  &__content {
+    flex: 1 1 50%;
+  }
+  // .heallo__img
+  &__img {
+    flex: 1 1 50%;
+  }
+}
+
+.title {
+}
+.btn {
+  padding: 0.5em 1em;
+  background: rgb(23, 77, 158);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+
+  font-size: 1.2em;
+
+  transition: all 0.3s;
+  outline: 0;
+
+  &:focus-visible {
+    outline: 2px solid $base-color;
+  }
+
+  &:hover {
+    background: rgb(15, 57, 121);
+  }
+}
+
+//==================================================================================================
+//==================================================================================================
