@@ -15,60 +15,67 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="container">
-        <div class="header__body">
-          <a href="/" class="logo"><span>YT</span><span>Project</span></a>
-          <nav class="menu">
-            <ul class="menu__list">
-              <li class="menu__item">
-                <a href="#" class="menu__link">Головна</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">YouTube Аналітика</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Настройкі</a>
-              </li>
-            </ul>
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <section class="hello">
+    <div class="wrapper">
+      <header class="header">
         <div class="container">
-          <div class="hello__body">
-            <div class="hello__content">
-              <h1 class="hello__title title">
-                Привіт ти зайшов на сайт по керуванню ютуб 👋
-              </h1>
-              <p class="hello__description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
-                ad temporibus eius aut quos odio.
-              </p>
-              <div class="hello__buttons">
-                <button class="hello__btn btn">YouTube Аналітика</button>
-                <button class="hello__btn btn">Настройкі</button>
-              </div>
-            </div>
-            <div class="hello__img"></div>
+          <div class="header__body">
+            <a href="/" class="logo"><span>YT</span><span>Project</span></a>
+            <nav class="menu">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a href="#" class="menu__link">Головна</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#" class="menu__link">YouTube Аналітика</a>
+                </li>
+                <li class="menu__item">
+                  <a href="#" class="menu__link">Настройкі</a>
+                </li>
+              </ul>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </nav>
           </div>
         </div>
-      </section>
-    </main>
+      </header>
 
-    <footer class="footer">
-      <div class="container"></div>
-    </footer>
+      <main class="main">
+        <section class="hello">
+          <div class="container">
+            <div class="hello__body">
+              <div class="hello__content">
+                <h1 class="hello__title title">
+                  Привіт, ти зайшов на сайт по керуванню ютуб 👋
+                </h1>
+                <p class="hello__description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Alias ad temporibus eius aut quos odio.
+                </p>
+                <div class="hello__buttons">
+                  <button class="hello__btn btn">YouTube Аналітика</button>
+                  <button class="hello__btn btn">Настройкі</button>
+                </div>
+              </div>
+              <div class="hello__img"></div>
+            </div>
+          </div>
+        </section>
+        <section class="yt-analytics">
+          <div class="container">
+            <h2 class="yt-analytics__title section-title">YouTube Analytics</h2>
+            <div class="yt-analytics__body">
+              <h3 class="yt-analytics__text">Виберіть задачу</h3>
+            </div>
+          </div>
+        </section>
+      </main>
 
-    <p class="test">test</p>
-
+      <footer class="footer">
+        <div class="container">&copy; design by DiniC and Taras</div>
+      </footer>
+    </div>
     <script src="./js/index.js"></script>
   </body>
 </html>

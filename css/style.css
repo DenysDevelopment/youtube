@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 *,
 *::before,
@@ -13,12 +13,59 @@
   outline: 2px solid #eeea14;
 }
 
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8f8f8f;
+  border-radius: 100px;
+}
+
+.section-title {
+  position: relative;
+  text-align: left;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30%;
+  height: 2px;
+  background: #eeea14;
+}
+
 html,
 body {
   font-size: 16px;
-  font-family: "Montserrat Alternates";
+  font-family: "Montserrat";
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  height: 100%;
 }
 
 html.theme-toggle,
@@ -38,6 +85,11 @@ body.theme-toggle .header {
 html.theme-toggle .menu__item::before,
 body.theme-toggle .menu__item::before {
   background: white;
+}
+
+html.theme-toggle .footer,
+body.theme-toggle .footer {
+  background: #181818;
 }
 
 .container {
@@ -319,7 +371,7 @@ input:checked + .slider:before {
 }
 
 .hello__title {
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 20px;
 }
 
@@ -360,14 +412,14 @@ input:checked + .slider:before {
 
 .hello__content {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
+      -ms-flex: 1 1 60%;
+          flex: 1 1 60%;
 }
 
 .hello__img {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
+      -ms-flex: 1 1 40%;
+          flex: 1 1 40%;
 }
 
 @media (max-width: 900px) {
@@ -395,3 +447,10 @@ input:checked + .slider:before {
 .btn:hover {
   background: #0f3979;
 }
+
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #00000028;
+}
+/*# sourceMappingURL=style.css.map */
