@@ -61,14 +61,29 @@ header {
 	}
 
 	button {
+		position: relative;
 		background: transparent;
 		border: 2px solid #d42323;
+		overflow: hidden;
 	}
 	a {
 		display: block;
+		background: transparent;
 		padding: 15px 25px;
 		font-size: 22px;
 		color: #383838;
+		transition-duration: 0.3s;
+	}
+	button:hover a {
+		color: #fff;
+	}
+
+	.hover-btn {
+		position: absolute;
+		background: #d42323;
+		border-radius: 50%;
+		transform: scale(1);
+		z-index: -1;
 	}
 }
 

@@ -81,15 +81,33 @@ header {
 }
 
 .content button {
+  position: relative;
   background: transparent;
   border: 2px solid #d42323;
+  overflow: hidden;
 }
 
 .content a {
   display: block;
+  background: transparent;
   padding: 15px 25px;
   font-size: 22px;
   color: #383838;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.content button:hover a {
+  color: #fff;
+}
+
+.content .hover-btn {
+  position: absolute;
+  background: #d42323;
+  border-radius: 50%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  z-index: -1;
 }
 
 .img-cont {
