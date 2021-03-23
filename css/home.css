@@ -33,6 +33,31 @@ img {
 header {
   padding: 30px 50px 20px;
   border-bottom: 1px solid #f0f0f0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .night-toggle {
+  position: relative;
+  height: 24px;
+  width: 50px;
+  padding: 2px;
+  border-radius: 20px;
+  background: #d3d3d3;
+  cursor: pointer;
+}
+
+header .toggle {
+  position: absolute;
+  left: 2px;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background: #f5f5f5;
 }
 
 .logo h1 {
@@ -88,6 +113,7 @@ header {
 }
 
 .content a {
+  position: relative;
   display: block;
   background: transparent;
   padding: 15px 25px;
@@ -95,10 +121,7 @@ header {
   color: #383838;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
-}
-
-.content button:hover a {
-  color: #fff;
+  z-index: 5;
 }
 
 .content .hover-btn {
@@ -107,7 +130,7 @@ header {
   border-radius: 50%;
   -webkit-transform: scale(1);
           transform: scale(1);
-  z-index: -1;
+  z-index: 1;
 }
 
 .img-cont {
@@ -142,4 +165,3 @@ footer .copy {
 footer .copy p {
   line-height: 2;
 }
-/*# sourceMappingURL=home.css.map */
