@@ -530,6 +530,14 @@ input:checked + .slider:before {
   display: none;
 }
 
+.search__btn.lock {
+  cursor: wait;
+  opacity: 0.5;
+  -webkit-filter: contrast(-20px);
+          filter: contrast(-20px);
+  pointer-events: none;
+}
+
 .result {
   max-width: 800px;
   margin: 50px auto;

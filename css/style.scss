@@ -451,6 +451,12 @@ input:checked + .slider:before {
   }
   // .search__btn
   &__btn {
+    &.lock {
+      cursor: wait;
+      opacity: 0.5;
+      filter: contrast(-20px);
+      pointer-events: none;
+    }
   }
 }
 
