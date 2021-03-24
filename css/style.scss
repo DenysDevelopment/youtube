@@ -461,9 +461,9 @@ input:checked + .slider:before {
   margin: 50px auto;
   &__body {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 250px 1fr;
     row-gap: 40px;
-    column-gap: 50px;
+    column-gap: 20px;
   }
 
   &__name-column {
