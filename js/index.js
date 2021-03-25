@@ -37,13 +37,17 @@ switchThemeElem.addEventListener("change", () => {
   }
 });
 
+function formatingNumber(number) {
+  return Number(number).toLocaleString({ style: "percent" });
+}
+
 function renderHTML() {
   document.querySelector(".result__out").innerHTML = `
       <div class="result__body">
-        <a class="result__icon" href="#" >
-          <img src="${
-            data.items[0].snippet.thumbnails.default.url ? "" : ""
-          }" alt="ICON">
+        <a class="result__icon" href="${
+          data.items[0].snippet.thumbnails.default.url
+        }" >
+          <img src="${data.items[0].snippet.thumbnails.default.url}" alt="ICON">
         </a>
         <div class="result__name-column">
           Назва канала
@@ -55,25 +59,29 @@ function renderHTML() {
           Підписників
         </div>
         <div class="result__text-column">
-          ${data.items[0].statistics.subscriberCount}
+          ${formatingNumber(data.items[0].statistics.subscriberCount)}
         </div>
         <div class="result__name-column">
           Кількість відео
         </div>
         <div class="result__text-column">
-          ${data.items[0].statistics.videoCount}
+          ${formatingNumber(data.items[0].statistics.videoCount)}
         </div>
         <div class="result__name-column">
           Переглядів на всіх відео
         </div>
         <div class="result__text-column">
-          ${data.items[0].statistics.viewCount}
+          ${formatingNumber(data.items[0].statistics.viewCount)}
         </div>
         <div class="result__name-column">
           Опис
         </div>
         <div class="result__text-column">
-          ${data.items[0].snippet.localized.description}
+          ${
+            data.items[0].snippet.localized.description
+              ? data.items[0].snippet.localized.description
+              : "Немає опису"
+          }
         </div>
         <div class="result__name-column">
           Дата створення
@@ -87,4 +95,4 @@ function renderHTML() {
     `;
 }
 
-document.addEventListener("click", renderHTML);
+document.querySelector(".search__btn").addEventListener("click", renderHTML);

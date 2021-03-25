@@ -533,8 +533,8 @@ input:checked + .slider:before {
 .search__btn.lock {
   cursor: wait;
   opacity: 0.5;
-  -webkit-filter: contrast(-20px);
-          filter: contrast(-20px);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
   pointer-events: none;
 }
 
@@ -576,7 +576,6 @@ input:checked + .slider:before {
 .result__icon {
   width: 100px;
   height: 100px;
-  background: #d80b0b;
   grid-column: 2 span;
   text-decoration: none;
 }

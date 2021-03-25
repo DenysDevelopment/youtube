@@ -6,10 +6,7 @@ window.onload = function loadClient() {
     .load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
     .then(
       function () {
-        console.log("GAPI client loaded for API");
-        setTimeout(() => {
-          document.querySelector(".search__btn").classList.remove("lock");
-        }, 4000);
+        document.querySelector(".search__btn").classList.remove("lock");
       },
       function (err) {
         console.error("Error loading GAPI client for API", err);
@@ -26,7 +23,8 @@ function execute() {
   return gapi.client.youtube.channels
     .list({
       part: ["snippet,contentDetails,statistics"],
-      forUsername: valueInput,
+      // id: ["UC_x5XG1OV2P6uZZ5FSM9Ttw"],
+      id: [valueInput],
     })
     .then(
       function (response) {
@@ -37,8 +35,6 @@ function execute() {
       }
     );
 }
-gapi.load("client:auth2", function () {
-  gapi.auth2.init({ client_id: "YOUR_CLIENT_ID" });
-});
+gapi.load("client:auth2");
 
 document.querySelector(".search__btn").addEventListener("click", execute);

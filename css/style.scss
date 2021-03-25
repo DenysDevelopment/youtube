@@ -454,7 +454,7 @@ input:checked + .slider:before {
     &.lock {
       cursor: wait;
       opacity: 0.5;
-      filter: contrast(-20px);
+      filter: grayscale(1);
       pointer-events: none;
     }
   }
@@ -492,7 +492,6 @@ input:checked + .slider:before {
   &__icon {
     width: 100px;
     height: 100px;
-    background: rgb(216, 11, 11);
     grid-column: 2 span;
     text-decoration: none;
     img {
