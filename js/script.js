@@ -24,6 +24,14 @@ function execute() {
     })
     .then(
       function (response) {
+        let post = {
+          title: response.result.items[0].snippet.title,
+          date: response.result.items[0].snippet.publishedAt,
+          subscriber: response.result.items[0].statistics.subscriberCount,
+          video: response.result.items[0].statistics.videoCount,
+          view: response.result.items[0].statistics.viewCount,
+        };
+        console.log(post);
         document.getElementById("id").innerHTML =
           JSON.stringify(response.result.items[0].snippet.title) +
           " " +

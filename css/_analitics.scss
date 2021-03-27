@@ -1,0 +1,18 @@
+.input-cont {
+	padding-top: 50px;
+	display: flex;
+
+	p {
+		font-size: 22px;
+		padding-right: 20px;
+	}
+	input {
+		padding: 3px 6px;
+		background: transparent;
+		border: 1px solid #181818;
+	}
+}
+.help {
+	padding-top: 30px;
+	width: 70%;
+}

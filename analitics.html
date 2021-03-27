@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/home.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="logo">
+				<h1><span>YT</span> PROJECT</h1>
+			</div>
+
+			<div class="night-toggle">
+				<div class="toggle"></div>
+			</div>
+		</header>
+
+		<main>
+			<div class="flex-cont">
+				<div class="content">
+					<h2 class="hello">Отобразить глобальную информацию о канале
+					</h2>
+
+
+					<div class="input-cont">
+						<p>Введіть ID каналу:</p><input type="text">
+					</div>
+
+					<img class="help" src="images/help.png" alt="">
+				</div>
+
+				<div class="result-cont">
+					<table id="result">
+						<th>
+						<td>Ім'я каналу</td>
+						<td>дата створення</td>
+						<td>к-сть підписників</td>
+						<td>к-сть відео</td>
+						<td>к-сть переглядів всіх відео</td>
+						</th>
+						<script type="text/template" id="post"></script>
+					</table>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<div class="copy">
+				<p>Web Developers Maksimuk Denis and Hlivchuk Taras</p>
+				<p>© Copyright 2021. All Rights Reserved.</p>
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/home.js"></script>
+</body>
+
+</html>
