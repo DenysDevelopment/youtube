@@ -16,7 +16,9 @@
 	<div class="wrapper">
 		<header>
 			<div class="logo">
-				<h1><span>YT</span> PROJECT</h1>
+				<a href="home.html">
+					<h1><span>YT</span> PROJECT</h1>
+				</a>
 			</div>
 
 			<div class="night-toggle">
@@ -26,29 +28,33 @@
 
 		<main>
 			<div class="flex-cont">
-				<div class="content">
-					<h2 class="hello">Отобразить глобальную информацию о канале
-					</h2>
-
-
-					<div class="input-cont">
-						<p>Введіть ID каналу:</p><input type="text">
+				<div class="content-analitics">
+					<div class="content-analitics__title">
+						<h2><b>YouTube</b> Analitics</h2>
+						<p>Виберіть задачу</p>
 					</div>
 
-					<img class="help" src="images/help.png" alt="">
-				</div>
+					<div class="content-analitics__tasks">
+						<button class="task"><a href="globalInfo.html">Відобразити глобальну інформацію про канал</a>
+							<div class="hover-btn"></div>
+						</button>
+						<button class="task"><a href="#">Порівняти глобальну інформацію про канали</a>
+							<div class="hover-btn"></div>
+						</button>
+						<button class="task"><a href="#">Сортувати канали за їхніми даними</a>
+							<div class="hover-btn"></div>
+						</button>
+						<button class="task"><a href="#">Медіа резонанс</a>
+							<div class="hover-btn"></div>
+						</button>
+						<button class="task"><a href="#">Порівняти Медіа резонанс</a>
+							<div class="hover-btn"></div>
+						</button>
+						<button class="task"><a href="#">Сортувати по Медіа резонансу</a>
+							<div class="hover-btn"></div>
+						</button>
+					</div>
 
-				<div class="result-cont">
-					<table id="result">
-						<th>
-						<td>Ім'я каналу</td>
-						<td>дата створення</td>
-						<td>к-сть підписників</td>
-						<td>к-сть відео</td>
-						<td>к-сть переглядів всіх відео</td>
-						</th>
-						<script type="text/template" id="post"></script>
-					</table>
 				</div>
 			</div>
 		</main>

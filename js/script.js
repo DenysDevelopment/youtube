@@ -20,10 +20,12 @@ function execute() {
   return gapi.client.youtube.channels
     .list({
       part: ["snippet,contentDetails,statistics"],
-      id: ["UC_x5XG1OV2P6uZZ5FSM9Ttw"],
+      id: [$("#idChanel").val()],
     })
     .then(
       function (response) {
+        let $table = $("#table");
+        let postTemplate = $("#order-template").html();
         let post = {
           title: response.result.items[0].snippet.title,
           date: response.result.items[0].snippet.publishedAt,
@@ -31,17 +33,9 @@ function execute() {
           video: response.result.items[0].statistics.videoCount,
           view: response.result.items[0].statistics.viewCount,
         };
-        console.log(post);
-        document.getElementById("id").innerHTML =
-          JSON.stringify(response.result.items[0].snippet.title) +
-          " " +
-          JSON.stringify(response.result.items[0].snippet.publishedAt) +
-          " " +
-          JSON.stringify(response.result.items[0].statistics.subscriberCount) +
-          " " +
-          JSON.stringify(response.result.items[0].statistics.videoCount) +
-          " " +
-          JSON.stringify(response.result.items[0].statistics.viewCount);
+
+        $table.append(Mustache.render(postTemplate, post));
+        $(".table").show(300);
       },
       function (err) {
         console.error("Execute error", err);
