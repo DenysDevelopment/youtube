@@ -312,6 +312,7 @@ input:checked + .slider:before {
   &__body {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   // .hello__title
   &__title {
@@ -353,7 +354,9 @@ input:checked + .slider:before {
   &__img {
     flex: 1 1 40%;
     img {
-      max-width: 100%;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
 
     @media (max-width: 900px) {
@@ -463,7 +466,6 @@ input:checked + .slider:before {
 //==================================================================================================
 
 .result {
-  max-width: 800px;
   margin: 50px auto;
   &__body {
     display: grid;
@@ -501,4 +503,51 @@ input:checked + .slider:before {
     }
   }
 }
+
 //==================================================================================================
+
+#preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 999999;
+
+  width: 100%;
+  height: 100%;
+
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: preloader 1s ease 6s forwards;
+
+  img {
+    width: 40%;
+    position: absolute;
+  }
+
+  @media (min-width: 1920px) {
+    img {
+      width: 50%;
+    }
+  }
+}
+
+// @keyframes preloader {
+//   100% {
+//     transform: translateX(-100%);
+//     opacity: 0;
+//   }
+// }
+// @keyframes preloaderImg {
+//   100% {
+//     transform: translateX(100%);
+//     opacity: 0;
+//   }
+// }
+//========================================================================================================================================================

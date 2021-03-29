@@ -41,6 +41,7 @@ function formatingNumber(number) {
   return Number(number).toLocaleString({ style: "percent" });
 }
 
+//показання інформацію про канал
 function renderHTML() {
   document.querySelector(".result__out").innerHTML = `
       <div class="result__body">
@@ -95,4 +96,27 @@ function renderHTML() {
     `;
 }
 
-document.querySelector(".search__btn").addEventListener("click", renderHTML);
+// document.querySelector(".search__btn").addEventListener("click", renderHTML);
+
+//анімація пролоадера картінкі
+
+const helloImgElem = document.querySelector(".hello__img img");
+
+function preloader() {
+  const preloaderImgElem = document.querySelector("#preloader img");
+  gsap.to(preloaderImgElem, {
+    duration: 2,
+    left: helloImgElem.offsetLeft,
+    top: helloImgElem.offsetTop,
+    width: 500,
+    opacity: 0,
+  });
+
+  gsap.to(preloaderImgElem.parentElement, {
+    duration: 2,
+    background: "transparent",
+    display: "none",
+  });
+}
+
+setTimeout(preloader, 6000);
