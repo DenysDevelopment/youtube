@@ -38,10 +38,10 @@ $(function () {
           })
           .animate(
             {
-              height: 500,
-              width: 500,
-              left: "-=240",
-              top: "-=240",
+              height: 700,
+              width: 700,
+              left: "-=340",
+              top: "-=340",
             },
             300
           );

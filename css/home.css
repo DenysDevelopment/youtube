@@ -375,6 +375,10 @@ footer .copy p {
   border-collapse: collapse;
 }
 
+.task-container .table p {
+  display: inline-block;
+}
+
 .task-container .table th {
   border-bottom: 2px solid #d42323;
 }
@@ -385,4 +389,36 @@ footer .copy p {
   border-left: 2px solid #d42323;
   border-right: 2px solid #d42323;
   text-align: center;
+}
+
+.task-container .table .td-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.task-container .table .fa-sort-up {
+  padding-top: 12px;
+  padding-right: 3px;
+  font-size: 25px;
+  color: #035500;
+}
+
+.task-container .table .fa-sort-down {
+  padding-bottom: 12px;
+  padding-right: 3px;
+  font-size: 25px;
+  color: #530000;
+}
+
+.task-container .table .arTSub,
+.task-container .table .arTVid,
+.task-container .table .arTView,
+.task-container .table .arBSub,
+.task-container .table .arBVid,
+.task-container .table .arBView {
+  display: none;
 }

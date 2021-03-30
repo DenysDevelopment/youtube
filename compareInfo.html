@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" href="css/home.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js"></script>
+	<script src="https://apis.google.com/js/api.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="logo">
+				<a href="home.html">
+					<h1><span>YT</span> PROJECT</h1>
+				</a>
+			</div>
+
+			<div class="flex-tog">
+				<div class="back"><a href="analitics.html"><svg id="arrow" viewBox="0 0 31.494 31.494">
+							<path d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554
+		  c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587
+		  c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z" />
+						</svg>
+						<p><span><b>YouTube</b></span> Analitics</p>
+					</a></div>
+				<div class="night-toggle">
+					<div class="toggle"></div>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<div class="task-container">
+				<h2>Відобразити глобальну інформацію про канал</h2>
+				<div class="input">
+					<div class="form">
+						<p>Введіть <span>ID</span> каналу:</p>
+						<input id="idChanel" type="text">
+					</div>
+					<button onclick="execute()"><a href="#">Додати канал для порівняння</a>
+						<div class="hover-btn"></div>
+					</button>
+				</div>
+
+				<div class="none">
+
+
+					<svg class="arrowBottom" viewBox="0 0 31.494 31.494">
+						<path d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554
+	  c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587
+	  c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z" />
+					</svg>
+				</div>
+
+				<div class="table">
+					<table id="table">
+						<tr>
+							<th>Ім'я каналу</th>
+							<th>Дата створення</th>
+							<th>К-сть підписників</th>
+							<th>К-сть відео</th>
+							<th>К-сть переглядів всіх відео</th>
+						</tr>
+
+						<script type="text/template" id="order-template">
+						<tr data-id="{{id}}">
+							<td class="title"><p>{{title}}</p></td>
+							<td class="date"><p>{{date}}</p></td>
+							<td class="subscriber"><div class="td-flex"><i class="fas fa-sort-up arTSub"></i><i class="fas fa-sort-down arBSub"></i><p>{{subscriber}}</p></div></td>
+							<td class="video"><div class="td-flex"><i class="fas fa-sort-up arTVid"></i><i class="fas fa-sort-down arBVid"></i><p>{{video}}</p></div></td>
+							<td class="view"><div class="td-flex"><i class="fas fa-sort-up arTView"></i><i class="fas fa-sort-down arBView"></i><p>{{view}}</p></div></td>
+						</tr>
+					</script>
+
+					</table>
+				</div>
+
+			</div>
+		</main>
+
+		<footer>
+			<div class="copy">
+				<p>Web Developers Maksimuk Denis and Hlivchuk Taras</p>
+				<p>© Copyright 2021. All Rights Reserved.</p>
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/home.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
