@@ -21,6 +21,9 @@
   min-height: 100%;
 }
 body {
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 .main {
@@ -353,6 +356,10 @@ input:checked + .slider:before {
   // .heallo__img
   &__img {
     flex: 1 1 40%;
+
+    opacity: 0;
+
+    animation: preloader 1s 7s forwards;
     img {
       height: 100%;
       width: 100%;
@@ -506,6 +513,14 @@ input:checked + .slider:before {
 
 //==================================================================================================
 
+body.theme-toggle #preloader {
+  background: #333;
+
+  @media (max-width: 900px) {
+    display: flex;
+  }
+}
+
 #preloader {
   position: absolute;
   top: 0;
@@ -523,9 +538,9 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  animation: preloader 1s ease 6s forwards;
-
+  @media (max-width: 900px) {
+    display: none;
+  }
   img {
     width: 40%;
     position: absolute;
@@ -538,16 +553,13 @@ input:checked + .slider:before {
   }
 }
 
-// @keyframes preloader {
-//   100% {
-//     transform: translateX(-100%);
-//     opacity: 0;
-//   }
-// }
-// @keyframes preloaderImg {
-//   100% {
-//     transform: translateX(100%);
-//     opacity: 0;
-//   }
-// }
+@keyframes preloader {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 //========================================================================================================================================================
