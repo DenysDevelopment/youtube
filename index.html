@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body>
+  <body class="lock">
+    <div id="preloader">
+      <img src="./images/welcome.gif" alt="preloader" />
+    </div>
     <div class="wrapper">
       <header class="header">
         <div class="container">
@@ -23,13 +26,15 @@
             <nav class="menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="#" class="menu__link">Головна</a>
+                  <a href="/" class="menu__link">Головна</a>
                 </li>
                 <li class="menu__item">
-                  <a href="#" class="menu__link">YouTube Аналітика</a>
+                  <a href="yt-anal.html" class="menu__link"
+                    >YouTube Аналітика</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a href="#" class="menu__link">Настройкі</a>
+                  <a href="settings.html" class="menu__link">Настройкі</a>
                 </li>
               </ul>
               <label class="switch">
@@ -47,7 +52,8 @@
             <div class="hello__body">
               <div class="hello__content">
                 <h1 class="hello__title title">
-                  Привіт, ти зайшов на сайт по керуванню ютуб 👋
+                  Привіт 👋 <br />
+                  ти зайшов на сайт по керуванню ютуб
                 </h1>
                 <p class="hello__description">
                   ти зможеш проаналізувати та <br />
@@ -61,7 +67,7 @@
                 </div>
               </div>
               <div class="hello__img">
-                <img src="./images/youtube_icon.png" alt="" />
+                <img src="./images/welcome-white.png" alt="" />
               </div>
             </div>
           </div>
@@ -72,6 +78,7 @@
         <div class="container">&copy; design by DiniC and Taras</div>
       </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>

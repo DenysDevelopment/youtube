@@ -31,9 +31,11 @@ switchThemeElem.addEventListener("change", () => {
   if (document.body.classList.contains("theme-toggle")) {
     document.body.classList.remove("theme-toggle");
     removeLocalSrorageItem("theme");
+    changeImgPreloaderTheme(false);
   } else {
     document.body.classList.add("theme-toggle");
     setLocalStorage("theme", JSON.stringify(true));
+    changeImgPreloaderTheme(true);
   }
 });
 
@@ -41,6 +43,7 @@ function formatingNumber(number) {
   return Number(number).toLocaleString({ style: "percent" });
 }
 
+//показання інформацію про канал
 function renderHTML() {
   document.querySelector(".result__out").innerHTML = `
       <div class="result__body">
@@ -95,4 +98,46 @@ function renderHTML() {
     `;
 }
 
-document.querySelector(".search__btn").addEventListener("click", renderHTML);
+// document.querySelector(".search__btn").addEventListener("click", renderHTML);
+
+//анімація пролоадера картінкі
+
+const helloImgElem = document.querySelector(".hello__img img");
+
+function preloader() {
+  if (window.innerWidth > 900) {
+    const preloaderImgElem = document.querySelector("#preloader img");
+    gsap.to(preloaderImgElem, {
+      duration: 1,
+      left: helloImgElem.offsetLeft,
+      top: helloImgElem.offsetTop,
+      width: helloImgElem.width,
+      opacity: 1,
+    });
+
+    gsap.to(preloaderImgElem.parentElement, {
+      duration: 2,
+      background: "transparent",
+      display: "none",
+    });
+
+    document.body.classList.remove("lock");
+  }
+}
+
+if (window.innerWidth < 900) {
+  document.querySelector("#preloader").style.display = "none";
+  document.body.classList.remove("lock");
+}
+
+setTimeout(preloader, 6000);
+
+function changeImgPreloaderTheme(theme) {
+  if (theme) {
+    helloImgElem.src = "./images/welcome-dark.png";
+  } else {
+    helloImgElem.src = "./images/welcome-white.png";
+  }
+}
+
+changeImgPreloaderTheme(getLocalSrorage("theme"));
