@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YouTube Analytics</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="./js/index.js" defer></script>
+    <script src="./js/data.js" defer></script>
+    <script src="./js/theme.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
@@ -37,18 +40,25 @@
         <section class="yt-analytics section-page">
           <div class="container">
             <h2 class="yt-analytics__title section-title">YouTube Analytics</h2>
-            <div class="yt-analytics__body">
+            <div class="yt-analytics__inner">
               <p class="yt-analytics__text">Виберіть задачу</p>
-              <div class="yt-analytics__btns">
-                <a href="info-channel.html" class="yt-analytics__btn btn">
-                  Подивитись всю інформацію про канал
-                </a>
-                <a href="" class="yt-analytics__btn btn">
-                  Порівняти інформацію про 2 канали
-                </a>
-                <a href="" class="yt-analytics__btn btn">
-                  Порівняти 3 і більше каналів
-                </a>
+              <div class="yt-analytics__body">
+                <a
+                  class="yt-analytics__link btn"
+                  href="./components/info-channel.html"
+                  >Інформацію про канал</a
+                >
+                <a class="yt-analytics__link btn" href="#"
+                  >Порівняти інформацію каналів (Сортувати канали за їхніми
+                  даними) - for dev</a
+                >
+                <a class="yt-analytics__link btn" href="#">Медіа резонанс</a>
+                <a class="yt-analytics__link btn" href="#"
+                  >Порівняти Медіа резонанс</a
+                >
+                <a class="yt-analytics__link btn" href="#"
+                  >Сортувати по Медіа резонансу</a
+                >
               </div>
             </div>
           </div>
@@ -58,6 +68,5 @@
         <div class="container">&copy; design by DiniC and Taras</div>
       </footer>
     </div>
-    <script src="js/index.js"></script>
   </body>
 </html>
