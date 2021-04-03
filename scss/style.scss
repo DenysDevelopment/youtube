@@ -3,6 +3,11 @@
 
 @import "_vars";
 
+.disaled {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
 *,
 *::before,
 *::after {
@@ -373,6 +378,7 @@ input:checked + .slider:before {
 }
 
 .btn {
+  display: inline-block;
   padding: 0.5em 1em;
   border: 2px solid $primary-color;
   background: transparent;
@@ -392,7 +398,7 @@ input:checked + .slider:before {
   &:hover {
     background: $primary-color;
     color: #fff;
-    border-color: #fff;
+    border-color: $base-color;
     border-radius: 5px;
   }
 }
@@ -411,25 +417,58 @@ input:checked + .slider:before {
 //==================================================================================================
 
 .yt-analytics {
-  &__body {
+  &__inner {
     text-align: center;
   }
   // .yt-analytics__text
   &__text {
     text-align: center;
-    margin-bottom: 20px;
-  }
-  // .yt-analytics__btn
-  &__btn {
+    margin: 0px 0px 50px 0px;
   }
 
-  &__btns {
+  &__body {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
-    * {
-      flex: 1 1 auto;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__link {
+    position: relative;
+    flex: 1 1 auto;
+    overflow: hidden;
+    border: 0;
+    border-left: 1px solid $primary-color;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0%;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: $primary-color;
+      z-index: -1;
+      transition: all 0.5s ease 0s;
+      border-radius: 0 0 20px 20px 0;
+    }
+
+    &:nth-child(even)::before {
+      left: 100%;
+    }
+    &:nth-child(even) {
+      border-right: 1px solid $primary-color;
+      border-left: 0;
+    }
+
+    &:hover {
+      background: transparent;
+      border-radius: 0;
+      border-color: $primary-color;
+    }
+    &:hover::before {
+      left: 0;
+      color: #fff;
     }
   }
 }
