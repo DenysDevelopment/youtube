@@ -31,6 +31,7 @@
 							<path d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554
 		  c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587
 		  c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z" />
+
 						</svg>
 						<p><span><b>YouTube</b></span> Analitics</p>
 					</a></div>
@@ -42,44 +43,85 @@
 
 		<main>
 			<div class="task-container">
-				<h2>Відобразити глобальну інформацію про канал</h2>
+				<h2>Сортувати канали за їхніми даними</h2>
 				<div class="input">
 					<div class="form">
 						<p>Введіть <span>ID</span> каналу:</p>
 						<input id="idChanel" type="text">
 					</div>
-					<button id="compare"><a href="#">Додати канал для порівняння</a>
+					<button id="sortingInfo"><a href="#">Додати канал для сортування</a>
 						<div class="hover-btn"></div>
 					</button>
 				</div>
 
-				<div class="none">
-
-
-					<svg class="arrowBottom" viewBox="0 0 31.494 31.494">
-						<path d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554
-	  c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587
-	  c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z" />
-					</svg>
-				</div>
 
 				<div class="table">
 					<table id="table">
 						<tr>
-							<th>Ім'я каналу</th>
-							<th>Дата створення</th>
-							<th>К-сть підписників</th>
-							<th>К-сть відео</th>
-							<th>К-сть переглядів всіх відео</th>
+							<th>
+								<div class="sort-flex">
+									<p>Ім'я каналу</p>
+
+									<div>
+										<div id="sortTopTitle" class="sortTop sort"><i class="fas fa-sort-up top"></i></div>
+										<div id="sortBottomTitle" class="sortBottom sort"><i class="fas fa-sort-down bottom"></i>
+										</div>
+									</div>
+								</div>
+							</th>
+							<th>
+								<div class="sort-flex">
+									<p>Дата створення</p>
+
+									<div>
+										<div id="sortTopDate" class="sortTop sort"><i class="fas fa-sort-up top"></i></div>
+										<div id="sortBottomDate" class="sortBottom sort"><i class="fas fa-sort-down bottom"></i>
+										</div>
+									</div>
+								</div>
+							</th>
+							<th>
+								<div class="sort-flex">
+									<p>К-сть підписників</p>
+
+									<div>
+										<div id="sortTopSub" class="sortTop sort"><i class="fas fa-sort-up top"></i></div>
+										<div id="sortBottomSub" class="sortBottom sort"><i class="fas fa-sort-down bottom"></i>
+										</div>
+									</div>
+								</div>
+							</th>
+							<th>
+								<div class="sort-flex">
+									<p>К-сть відео</p>
+
+									<div>
+										<div id="sortTopVideo" class="sortTop sort"><i class="fas fa-sort-up top"></i></div>
+										<div id="sortBottomVideo" class="sortBottom sort"><i class="fas fa-sort-down bottom"></i>
+										</div>
+									</div>
+								</div>
+							</th>
+							<th>
+								<div class="sort-flex">
+									<p>К-сть переглядів всіх відео</p>
+
+									<div>
+										<div id="sortTopView" class="sortTop sort"><i class="fas fa-sort-up top"></i></div>
+										<div id="sortBottomView" class="sortBottom sort"><i class="fas fa-sort-down bottom"></i>
+										</div>
+									</div>
+								</div>
+							</th>
 						</tr>
 
 						<script type="text/template" id="order-template">
-						<tr data-id="{{id}}">
+						<tr class="remove" data-id="{{id}}">
 							<td class="title"><p>{{title}}</p></td>
 							<td class="date"><p>{{date}}</p></td>
-							<td class="subscriber"><div class="td-flex"><i class="fas fa-sort-up arTSub"></i><i class="fas fa-sort-down arBSub"></i><p>{{subscriber}}</p></div></td>
-							<td class="video"><div class="td-flex"><i class="fas fa-sort-up arTVid"></i><i class="fas fa-sort-down arBVid"></i><p>{{video}}</p></div></td>
-							<td class="view"><div class="td-flex"><i class="fas fa-sort-up arTView"></i><i class="fas fa-sort-down arBView"></i><p>{{view}}</p></div></td>
+							<td class="subscriber"><p>{{subscriber}}</p></td>
+							<td class="video"><p>{{video}}</p></td>
+							<td class="view"><p>{{view}}</p></td>
 						</tr>
 					</script>
 
@@ -97,8 +139,9 @@
 		</footer>
 	</div>
 
-	<script src="js/home.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/home.js"></script>
+
 </body>
 
 </html>

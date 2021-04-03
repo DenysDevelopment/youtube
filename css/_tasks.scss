@@ -115,5 +115,48 @@
 		.arBView {
 			display: none;
 		}
+
+		.sort-flex {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			p {
+				padding-right: 5px;
+			}
+		}
+
+		.sortTop {
+			position: relative;
+			width: 13px;
+			height: 10px;
+			overflow: hidden;
+			cursor: pointer;
+			.top {
+				position: absolute;
+				left: 0;
+				top: 0;
+				padding-top: 0;
+				padding-right: 0;
+				font-size: 20px;
+				color: #3f3f3f;
+			}
+		}
+
+		.sortBottom {
+			position: relative;
+			width: 13px;
+			height: 10px;
+			overflow: hidden;
+			cursor: pointer;
+			.bottom {
+				position: absolute;
+				left: 0;
+				top: -10px;
+				padding-top: 0;
+				padding-right: 0;
+				font-size: 20px;
+				color: #3f3f3f;
+			}
+		}
 	}
 }

@@ -20,7 +20,7 @@ let subscriberAr = new Array(),
   videoAr = new Array(),
   viewAr = new Array();
 
-function execute() {
+$("#globalInfo").click(function () {
   return gapi.client.youtube.channels
     .list({
       part: ["snippet,contentDetails,statistics"],
@@ -28,6 +28,35 @@ function execute() {
     })
     .then(
       function (response) {
+        $("#idChanel").val("");
+        let $table = $("#table");
+        let postTemplate = $("#order-template").html();
+        let post = {
+          title: response.result.items[0].snippet.title,
+          date: response.result.items[0].snippet.publishedAt,
+          subscriber: response.result.items[0].statistics.subscriberCount,
+          video: response.result.items[0].statistics.videoCount,
+          view: response.result.items[0].statistics.viewCount,
+        };
+
+        $table.append(Mustache.render(postTemplate, post));
+        $(".table").show(300);
+      },
+      function (err) {
+        console.error("Execute error", err);
+      }
+    );
+});
+
+$("#compare").click(function () {
+  return gapi.client.youtube.channels
+    .list({
+      part: ["snippet,contentDetails,statistics"],
+      id: [$("#idChanel").val()],
+    })
+    .then(
+      function (response) {
+        $("#idChanel").val("");
         let $table = $("#table");
         let postTemplate = $("#order-template").html();
         let post = {
@@ -118,7 +147,36 @@ function execute() {
         console.error("Execute error", err);
       }
     );
-}
+});
+
+$("#sortingInfo").click(function () {
+  return gapi.client.youtube.channels
+    .list({
+      part: ["snippet,contentDetails,statistics"],
+      id: [$("#idChanel").val()],
+    })
+    .then(
+      function (response) {
+        $("#idChanel").val("");
+        let $table = $("#table");
+        let postTemplate = $("#order-template").html();
+        let post = {
+          title: response.result.items[0].snippet.title,
+          date: response.result.items[0].snippet.publishedAt,
+          subscriber: response.result.items[0].statistics.subscriberCount,
+          video: response.result.items[0].statistics.videoCount,
+          view: response.result.items[0].statistics.viewCount,
+        };
+
+        $table.append(Mustache.render(postTemplate, post));
+        $(".table").show(300);
+      },
+      function (err) {
+        console.error("Execute error", err);
+      }
+    );
+});
+
 gapi.load("client:auth2", function () {
   gapi.auth2.init({ client_id: "YOUR_CLIENT_ID" });
 });
