@@ -9,18 +9,18 @@ function setLocalStorage(key, data) {
 }
 
 //отримання данных з локального сховища браузера
-function getLocalSrorage(key) {
+function getLocalStorage(key) {
   return localStorage.getItem(key);
 }
 
 //видалення даних з локального сховища
-function removeLocalSrorageItem(key) {
+function removeLocalStorageItem(key) {
   localStorage.removeItem(key);
 }
 
 //установлення теми після загрузкі сторінкі
 function setLocalTheme() {
-  if (JSON.parse(getLocalSrorage("theme"))) {
+  if (JSON.parse(getLocalStorage("theme"))) {
     document.body.classList.add("theme-toggle");
   }
 }

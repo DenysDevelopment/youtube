@@ -362,10 +362,8 @@ input:checked + .slider:before {
   &__img {
     flex: 1 1 40%;
 
-    opacity: 0;
-
-    animation: preloader 1s 7s forwards;
     img {
+      opacity: 0;
       height: 100%;
       width: 100%;
       object-fit: cover;
@@ -589,15 +587,6 @@ body.theme-toggle #preloader {
     img {
       width: 50%;
     }
-  }
-}
-
-@keyframes preloader {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
