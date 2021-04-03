@@ -445,12 +445,10 @@ input:checked + .slider:before {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 40%;
           flex: 1 1 40%;
-  opacity: 0;
-  -webkit-animation: preloader 1s 7s forwards;
-          animation: preloader 1s 7s forwards;
 }
 
 .hello__img img {
+  opacity: 0;
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -693,6 +691,7 @@ body.theme-toggle #preloader {
     width: 50%;
   }
 }
+<<<<<<< HEAD
 
 @-webkit-keyframes preloader {
   0% {
@@ -711,3 +710,6 @@ body.theme-toggle #preloader {
     opacity: 1;
   }
 }
+=======
+/*# sourceMappingURL=style.css.map */
+>>>>>>> a22158612f7821e962c74f9ab39fbf4938d946a6
