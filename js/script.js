@@ -29,7 +29,7 @@ $("#globalInfo").click(function () {
     .then(
       function (response) {
         $("#idChanel").val("");
-        let $table = $("#table");
+        let $tbody = $("#tbody");
         let postTemplate = $("#order-template").html();
         let post = {
           title: response.result.items[0].snippet.title,
@@ -39,7 +39,7 @@ $("#globalInfo").click(function () {
           view: response.result.items[0].statistics.viewCount,
         };
 
-        $table.append(Mustache.render(postTemplate, post));
+        $tbody.append(Mustache.render(postTemplate, post));
         $(".table").show(300);
       },
       function (err) {
@@ -57,7 +57,7 @@ $("#compare").click(function () {
     .then(
       function (response) {
         $("#idChanel").val("");
-        let $table = $("#table");
+        let $tbody = $("#tbody");
         let postTemplate = $("#order-template").html();
         let post = {
           title: response.result.items[0].snippet.title,
@@ -67,7 +67,7 @@ $("#compare").click(function () {
           view: response.result.items[0].statistics.viewCount,
         };
 
-        $table.append(Mustache.render(postTemplate, post));
+        $tbody.append(Mustache.render(postTemplate, post));
         $(".table").show(300);
 
         subscriberAr.push(parseFloat(post.subscriber));
@@ -158,7 +158,7 @@ $("#sortingInfo").click(function () {
     .then(
       function (response) {
         $("#idChanel").val("");
-        let $table = $("#table");
+        let $tbody = $("#tbody");
         let postTemplate = $("#order-template").html();
         let post = {
           title: response.result.items[0].snippet.title,
@@ -168,7 +168,7 @@ $("#sortingInfo").click(function () {
           view: response.result.items[0].statistics.viewCount,
         };
 
-        $table.append(Mustache.render(postTemplate, post));
+        $tbody.append(Mustache.render(postTemplate, post));
         $(".table").show(300);
       },
       function (err) {

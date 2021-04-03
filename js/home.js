@@ -132,5 +132,4 @@ $(function () {
       toggleNum = 0;
     }
   });
- 
 });
