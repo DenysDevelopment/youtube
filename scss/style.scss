@@ -606,3 +606,79 @@ body.theme-toggle #preloader {
 }
 
 //========================================================================================================================================================
+body {
+  padding-bottom: 120px;
+  height: 2000px;
+}
+
+.cash-save {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  background: rgba(196, 196, 196, 0.2);
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  text-align: center;
+
+  height: 120px;
+
+  padding: 20px 0;
+  // .cash-save__body
+  &__body {
+  }
+  // .cash-save__text
+  &__text {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  // .cash-save__button
+  &__button {
+    font-size: 15px;
+  }
+  // .cash-save__button-y
+  &__button-y {
+    border-color: rgb(87, 211, 15);
+    font-size: 20px;
+  }
+  // .cash-save__button-n
+  &__button-n {
+    margin-left: 50px;
+    border: 0;
+  }
+}
+.btn {
+}
+
+//========================================================================================================================================================
+
+.widgets {
+  // .widgets__body
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+.widgets-card {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  &__title {
+  }
+  // .widgets-card__line
+  &__line {
+    border: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+  }
+  // .widgets-card__content
+  &__content {
+  }
+}
+
+//========================================================================================================================================================

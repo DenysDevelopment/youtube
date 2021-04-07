@@ -706,4 +706,66 @@ body.theme-toggle #preloader {
     width: 50%;
   }
 }
+
+body {
+  padding-bottom: 120px;
+  height: 2000px;
+}
+
+.cash-save {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(196, 196, 196, 0.2);
+  -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  text-align: center;
+  height: 120px;
+  padding: 20px 0;
+}
+
+.cash-save__text {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.cash-save__button {
+  font-size: 15px;
+}
+
+.cash-save__button-y {
+  border-color: #57d30f;
+  font-size: 20px;
+}
+
+.cash-save__button-n {
+  margin-left: 50px;
+  border: 0;
+}
+
+.widgets__body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.widgets-card {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.widgets-card__line {
+  border: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 10px 0;
+}
 /*# sourceMappingURL=style.css.map */
