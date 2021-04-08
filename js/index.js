@@ -100,3 +100,62 @@ switchThemeElem.addEventListener("change", () => {
 function formatingNumber(number) {
   return Number(number).toLocaleString({ style: "percent" });
 }
+
+
+
+
+
+//модалка
+class Modal {
+  constructor(opts = {}) {
+    this.targetElem = opts.targetElem;
+    this.selectorOut = opts.selectorOut;
+    this.html = opts.html;
+  }
+
+  init() {
+    console.log(this)
+    document.querySelector(this.targetElem).addEventListener('click', this.create);
+  }
+
+  create() {    
+    const afterElem = document.querySelector(this.selectorOut);
+    const modalElem = document.createElement('div')
+    const overlayElem = document.createElement('div')
+    const bodyElem = document.createElement('div')
+    const closeBtnElem = document.createElement('button')
+
+    closeBtnElem.innerText = '×';
+
+    modalElem.classList.add('modal');
+    overlayElem.classList.add('modal__overlay');
+    bodyElem.classList.add('modal__body');
+    closeBtnElem.classList.add('modal__close');
+
+    afterElem.insertAdjacentElement('afterbegin',modalElem);
+    modalElem.append(overlayElem);
+    modalElem.append(bodyElem);
+    bodyElem.append(closeBtnElem);
+    bodyElem.innerHTML += this.html;
+
+    document.querySelector('.modal__close').addEventListener('click', this.close);
+
+  }
+
+  close() {
+    document.querySelector('.modal').remove();
+  }
+  
+}
+
+
+// example for created modal
+const modal = new Modal({
+  targetElem: '.header__add',
+  selectorOut: "body",
+  html: 'htmlToModal()',
+});
+
+const addBtnElem = document.querySelector('.header__add');
+
+addBtnElem.addEventListener('click', modal.create);
