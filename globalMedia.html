@@ -6,10 +6,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 	<link rel="stylesheet" href="css/home.css">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js"></script>
+	<script src="https://apis.google.com/js/api.js"></script>
 </head>
 
 <body>
@@ -43,41 +46,44 @@
 
 		<main>
 			<div class="task-container">
-				<h2>Сортувати канали за їхніми даними</h2>
+				<h2>Медіа резонанс</h2>
 				<div class="input">
 					<div class="form">
 						<p>Введіть <span>ID</span> каналу:</p>
 						<input id="idChanel" type="text">
 					</div>
-					<button id="sortingInfo"><a href="#">Додати канал для сортування</a>
+					<button id="globalMedia"><a href="#">Отримати інформацію</a>
 						<div class="hover-btn"></div>
 					</button>
 				</div>
 
+				<div class="animEl_cont">
+					<div id="animEl" class=""></div>
+				</div>
 
 				<div class="table">
-					<table class="sortable" id="table">
-						<thead>
-							<tr>
-								<th>Ім'я каналу</th>
-								<th>Дата створення</th>
-								<th class="sorttable_numeric">К-сть підписників</th>
-								<th class="sorttable_numeric">К-сть відео</th>
-								<th class="sorttable_numeric">К-сть переглядів всіх відео</th>
-							</tr>
-						</thead>
+					<div class="timer"></div>
+					<table id="table">
+						<tr>
+							<th>Ім'я каналу</th>
+							<th>Дата створення</th>
+							<th>К-сть підписників</th>
+							<th>К-сть відео</th>
+							<th>К-сть переглядів всіх відео</th>
+							<th>К-сть всіх коментарів</th>
+						</tr>
 
 						<tbody id="tbody"></tbody>
 						<script type="text/template" id="order-template">
-							<tr class="remove" data-id="{{id}}">
-								<td class="title"><p>{{title}}</p></td>
-								<td class="date"><p>{{date}}</p></td>
-								<td class="subscriber"><p>{{subscriber}}</p></td>
-								<td class="video"><p>{{video}}</p></td>
-								<td class="view"><p>{{view}}</p></td>
-							</tr>
-						</script>
-
+						<tr data-id="{{id}}">
+							<td>{{title}}</td>
+							<td>{{date}}</td>
+							<td>{{subscriber}}</td>
+							<td>{{video}}</td>
+							<td>{{view}}</td>
+							<td>{{coment}}</td>
+						</tr>
+					</script>
 
 					</table>
 				</div>
@@ -92,16 +98,9 @@
 			</div>
 		</footer>
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="js/sorttable.js"></script>
-	<script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
-	<script type="text/javascript"
-		src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js"></script>
-	<script src="https://apis.google.com/js/api.js"></script>
 
-
-	<script src="js/script.js"></script>
 	<script src="js/home.js"></script>
+	<script src="js/script.js"></script>
 </body>
 
 </html>

@@ -43,19 +43,23 @@
 
 		<main>
 			<div class="task-container">
-				<h2>Сортувати канали за їхніми даними</h2>
+				<h2>Сортувати канали за Медіа резонансом</h2>
 				<div class="input">
 					<div class="form">
 						<p>Введіть <span>ID</span> каналу:</p>
 						<input id="idChanel" type="text">
 					</div>
-					<button id="sortingInfo"><a href="#">Додати канал для сортування</a>
+					<button id="sortingMedia"><a href="#">Додати канал для сортування</a>
 						<div class="hover-btn"></div>
 					</button>
 				</div>
 
+				<div class="animEl_cont">
+					<div id="animEl" class=""></div>
+				</div>
 
 				<div class="table">
+					<div class="timer"></div>
 					<table class="sortable" id="table">
 						<thead>
 							<tr>
@@ -64,6 +68,7 @@
 								<th class="sorttable_numeric">К-сть підписників</th>
 								<th class="sorttable_numeric">К-сть відео</th>
 								<th class="sorttable_numeric">К-сть переглядів всіх відео</th>
+								<th class="sorttable_numeric">К-сть всіх коментарів</th>
 							</tr>
 						</thead>
 
@@ -75,6 +80,7 @@
 								<td class="subscriber"><p>{{subscriber}}</p></td>
 								<td class="video"><p>{{video}}</p></td>
 								<td class="view"><p>{{view}}</p></td>
+								<td class="coment"><p>{{coment}}</p></td>
 							</tr>
 						</script>
 

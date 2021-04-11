@@ -28,11 +28,19 @@
 }
 
 .task-container {
+	position: relative;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	padding: 30px;
 	color: #181818;
+	.timer {
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: 13px;
+		color: #d42323;
+	}
 	h2 {
 		font-size: 30px;
 		font-weight: 500;
@@ -70,6 +78,7 @@
 		}
 	}
 	.table {
+		position: relative;
 		padding-top: 40px;
 		font-size: 18px;
 		table {
@@ -88,10 +97,22 @@
 			border-left: 2px solid #d42323;
 			border-right: 2px solid #d42323;
 			text-align: center;
+			line-height: 39px;
+
+			span {
+				position: relative;
+				top: 5px;
+				left: -5px;
+				width: 15px;
+				display: inline-block;
+				font-size: 30px;
+				color: #181818;
+			}
 		}
 
 		.td-flex {
 			display: flex;
+			justify-content: center;
 			align-items: center;
 		}
 		.fa-sort-up {
@@ -110,53 +131,48 @@
 		.arTSub,
 		.arTVid,
 		.arTView,
+		.arTCom,
 		.arBSub,
 		.arBVid,
-		.arBView {
+		.arBView,
+		.arBCom {
 			display: none;
 		}
+	}
+}
 
-		.sort-flex {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			p {
-				padding-right: 5px;
-			}
-		}
+.animEl_cont {
+	width: 100%;
+	height: 3px;
+}
+.animate {
+	position: relative;
+	left: 0%;
+	width: 0;
+	height: 3px;
+	background: #d42323;
+	animation: animate 5s infinite;
+}
 
-		.sortTop {
-			position: relative;
-			width: 13px;
-			height: 10px;
-			overflow: hidden;
-			cursor: pointer;
-			.top {
-				position: absolute;
-				left: 0;
-				top: 0;
-				padding-top: 0;
-				padding-right: 0;
-				font-size: 20px;
-				color: #3f3f3f;
-			}
-		}
-
-		.sortBottom {
-			position: relative;
-			width: 13px;
-			height: 10px;
-			overflow: hidden;
-			cursor: pointer;
-			.bottom {
-				position: absolute;
-				left: 0;
-				top: -10px;
-				padding-top: 0;
-				padding-right: 0;
-				font-size: 20px;
-				color: #3f3f3f;
-			}
-		}
+@keyframes animate {
+	0% {
+		left: 0%;
+		width: 0;
+	}
+	25% {
+		left: 40%;
+		width: 200px;
+	}
+	50% {
+		left: 100%;
+		width: 0;
+	}
+	75% {
+		left: 40%;
+		width: 200px;
+	}
+	100% {
+		left: 0%;
+		width: 0;
 	}
 }

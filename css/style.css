@@ -691,25 +691,3 @@ body.theme-toggle #preloader {
     width: 50%;
   }
 }
-<<<<<<< HEAD
-
-@-webkit-keyframes preloader {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes preloader {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-=======
-/*# sourceMappingURL=style.css.map */
->>>>>>> a22158612f7821e962c74f9ab39fbf4938d946a6

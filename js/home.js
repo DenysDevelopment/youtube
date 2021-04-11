@@ -132,4 +132,57 @@ $(function () {
       toggleNum = 0;
     }
   });
+
+  //localStorage setting===========
+  function storage() {
+    if (!localStorage.getItem("settingTime")) {
+      localStorage.setItem("settingTime", false);
+    }
+    if (!localStorage.getItem("settingCache")) {
+      localStorage.setItem("settingCache", true);
+    }
+  }
+  storage();
+
+  function setting() {
+    if (localStorage.getItem("settingTime") == "true") {
+      $("#checkTime").css("display", "block");
+    } else {
+      $("#checkTime").css("display", "none");
+    }
+
+    if (localStorage.getItem("settingCache") == "true") {
+      $("#checkCache").css("display", "block");
+      if (!sessionStorage.getItem("posts")) {
+        let posts = new Array();
+        sessionStorage.setItem("posts", JSON.stringify(posts));
+      }
+    } else {
+      $("#checkCache").css("display", "none");
+    }
+  }
+  setting();
+
+  $("#time").click(function () {
+    if (localStorage.getItem("settingTime") == "true") {
+      localStorage.setItem("settingTime", false);
+      $("#checkTime").css("display", "none");
+    } else {
+      localStorage.setItem("settingTime", true);
+      $("#checkTime").css("display", "block");
+    }
+  });
+
+  $("#cacheUse").click(function () {
+    if (localStorage.getItem("settingCache") == "true") {
+      localStorage.setItem("settingCache", false);
+      $("#checkCache").css("display", "none");
+      sessionStorage.removeItem("posts");
+    } else {
+      localStorage.setItem("settingCache", true);
+      $("#checkCache").css("display", "block");
+      let posts = new Array();
+      sessionStorage.setItem("posts", JSON.stringify(posts));
+    }
+  });
 });

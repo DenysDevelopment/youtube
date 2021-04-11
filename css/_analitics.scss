@@ -32,3 +32,72 @@
 		text-align: left;
 	}
 }
+
+.setting {
+	position: relative;
+	padding-left: 40px;
+	padding-bottom: 20px;
+	label {
+		font-size: 25px;
+	}
+	.checkbox {
+		display: none;
+	}
+	.pointer {
+		cursor: pointer;
+	}
+	.elCheck {
+		position: absolute;
+		left: 0;
+		top: 3px;
+		width: 22px;
+		height: 22px;
+		border: 2px solid #d42323;
+		border-radius: 3px;
+	}
+
+	.checked {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background: #d42323;
+		.one {
+			position: absolute;
+			left: 4px;
+			bottom: 3px;
+			width: 3px;
+			height: 8px;
+			background: #fff;
+			transform: rotate(-45deg);
+		}
+		.two {
+			position: absolute;
+			right: 6px;
+			bottom: 3px;
+			width: 3px;
+			height: 12px;
+			background: #fff;
+			transform: rotate(45deg);
+		}
+	}
+
+	.inputCache {
+		width: 250px;
+		padding: 5px;
+		margin-right: 20px;
+		border: none;
+		border-bottom: 2px solid #d42323;
+		font-size: 18px;
+		background: transparent;
+	}
+	.inp_cont {
+		padding-top: 20px;
+	}
+
+	a {
+		padding: 5px 20px;
+		font-size: 20px;
+	}
+}
+
+@include button();

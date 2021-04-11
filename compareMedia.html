@@ -42,13 +42,13 @@
 
 		<main>
 			<div class="task-container">
-				<h2>Порівняти глобальну інформацію про канали</h2>
+				<h2>Порівняти Медіа резонанс</h2>
 				<div class="input">
 					<div class="form">
 						<p>Введіть <span>ID</span> каналу:</p>
 						<input id="idChanel" type="text">
 					</div>
-					<button id="compare"><a href="#">Додати канал для порівняння</a>
+					<button id="compareMedia"><a href="#">Додати канал для порівняння</a>
 						<div class="hover-btn"></div>
 					</button>
 				</div>
@@ -63,7 +63,12 @@
 					</svg>
 				</div>
 
+				<div class="animEl_cont">
+					<div id="animEl" class=""></div>
+				</div>
+
 				<div class="table">
+					<div class="timer"></div>
 					<table id="table">
 						<tr>
 							<th>Ім'я каналу</th>
@@ -71,6 +76,7 @@
 							<th>К-сть підписників</th>
 							<th>К-сть відео</th>
 							<th>К-сть переглядів всіх відео</th>
+							<th>К-сть всіх коментарів</th>
 						</tr>
 
 						<tbody id="tbody"></tbody>
@@ -81,6 +87,7 @@
 							<td class="subscriber"><div class="td-flex"><i class="fas fa-sort-up arTSub"></i><i class="fas fa-sort-down arBSub"></i><p>{{subscriber}}</p></div></td>
 							<td class="video"><div class="td-flex"><i class="fas fa-sort-up arTVid"></i><i class="fas fa-sort-down arBVid"></i><p>{{video}}</p></div></td>
 							<td class="view"><div class="td-flex"><i class="fas fa-sort-up arTView"></i><i class="fas fa-sort-down arBView"></i><p>{{view}}</p></div></td>
+							<td class="coment"><div class="td-flex"><i class="fas fa-sort-up arTCom"></i><i class="fas fa-sort-down arBCom"></i><p>{{coment}}</p></div></td>
 						</tr>
 					</script>
 

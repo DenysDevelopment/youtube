@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/home.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="logo">
+				<a href="home.html">
+					<h1><span>YT</span> PROJECT</h1>
+				</a>
+			</div>
+
+			<div class="night-toggle">
+				<div class="toggle"></div>
+			</div>
+		</header>
+
+		<main>
+			<div class="flex-cont">
+				<div class="content-analitics">
+					<div class="content-analitics__title">
+						<h2>Налаштування</h2>
+
+					</div>
+
+					<div class="content-analitics__tasks">
+						<div class="setting">
+							<input class="checkbox" type="checkbox" name="time" id="time">
+							<label class="pointer" for="time">
+								<div class="elCheck">
+									<div id="checkTime" class="checked">
+										<div class="one"></div>
+										<div class="two"></div>
+									</div>
+								</div>Відображати час виконання задачі
+							</label>
+						</div>
+						<div class="setting">
+							<input class="checkbox" type="checkbox" name="cacheUse" id="cacheUse">
+							<label class="pointer" for="cacheUse">
+								<div class="elCheck">
+									<div id="checkCache" class="checked">
+										<div class="one"></div>
+										<div class="two"></div>
+									</div>
+								</div>Використовувати кеш
+							</label>
+						</div>
+						<div class="setting">
+							<label for="cachePath">Змінити шлях до кешу</label>
+
+							<div class="inp_cont">
+								<input class="inputCache" type="text" name="cachePath" id="cachePath">
+								<button><a href="#">Змінити</a>
+									<div class="hover-btn"></div>
+								</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<div class="copy">
+				<p>Web Developers Maksimuk Denis and Hlivchuk Taras</p>
+				<p>© Copyright 2021. All Rights Reserved.</p>
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/home.js"></script>
+</body>
+
+</html>
