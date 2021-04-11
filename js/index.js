@@ -87,7 +87,6 @@ switchThemeElem.addEventListener("change", () => {
   if (document.body.classList.contains("theme-toggle")) {
     document.body.classList.remove("theme-toggle");
     changeImgPreloaderTheme(false);
-    console.log(true);
     localStorage.removeItem("theme");
     switchThemeElem.classList.remove("_dark");
   } else {
@@ -101,10 +100,6 @@ function formatingNumber(number) {
   return Number(number).toLocaleString({ style: "percent" });
 }
 
-
-
-
-
 //модалка
 class Modal {
   constructor(opts = {}) {
@@ -114,48 +109,170 @@ class Modal {
   }
 
   init() {
-    console.log(this)
-    document.querySelector(this.targetElem).addEventListener('click', this.create);
+    console.log(this);
+    document
+      .querySelector(this.targetElem)
+      .addEventListener("click", this.create);
   }
 
-  create() {    
+  create() {
     const afterElem = document.querySelector(this.selectorOut);
-    const modalElem = document.createElement('div')
-    const overlayElem = document.createElement('div')
-    const bodyElem = document.createElement('div')
-    const closeBtnElem = document.createElement('button')
+    const modalElem = document.createElement("div");
+    const overlayElem = document.createElement("div");
+    const bodyElem = document.createElement("div");
+    const closeBtnElem = document.createElement("button");
 
-    closeBtnElem.innerText = '×';
+    closeBtnElem.innerText = "×";
 
-    modalElem.classList.add('modal');
-    overlayElem.classList.add('modal__overlay');
-    bodyElem.classList.add('modal__body');
-    closeBtnElem.classList.add('modal__close');
+    document.body.classList.add("lock");
 
-    afterElem.insertAdjacentElement('afterbegin',modalElem);
+    modalElem.classList.add("modal");
+    overlayElem.classList.add("modal__overlay");
+    bodyElem.classList.add("modal__body");
+    closeBtnElem.classList.add("modal__close");
+
+    afterElem.insertAdjacentElement("afterbegin", modalElem);
     modalElem.append(overlayElem);
     modalElem.append(bodyElem);
     bodyElem.append(closeBtnElem);
     bodyElem.innerHTML += this.html;
 
-    document.querySelector('.modal__close').addEventListener('click', this.close);
+    document
+      .querySelector(".modal__close")
+      .addEventListener("click", this.close);
 
+    document.querySelector(".modal__overlay").addEventListener("click", () => {
+      document.querySelector(".modal").remove();
+    });
+
+    //========================================================================================================================================================
+    let data;
+
+    function loadClient() {
+      gapi.client.setApiKey("AIzaSyCMQPA4JFFHpFPK-sr00Z6YRHeyJr-3_iA");
+      return gapi.client
+        .load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+        .then(
+          function () {
+            console.log("ok");
+          },
+          function (err) {
+            console.error("Error loading GAPI client for API", err);
+          }
+        );
+    }
+
+    function execute() {
+      loadClient();
+      return gapi.client.youtube.channels
+        .list({
+          part: ["snippet,contentDetails,statistics"],
+          // id: ["UC_x5XG1OV2P6uZZ5FSM9Ttw"],
+          id: [document.querySelector(".input-card").value],
+        })
+        .then(
+          function (response) {
+            data = JSON.parse(response.body);
+          },
+          function (err) {
+            console.error("Execute error", err);
+          }
+        );
+    }
+    gapi.load("client:auth2");
+
+    //========================================================================================================================================================
+    let cards = [];
+
+    if (localStorage.getItem("cards")) {
+      cards = JSON.parse(localStorage.getItem("cards"));
+    }
+
+    document.querySelector(".add-card").addEventListener("click", () => {
+      cards.push(document.querySelector(".input-card").value);
+      localStorage.setItem("cards", JSON.stringify(cards));
+      console.log(cards);
+    });
   }
 
   close() {
-    document.querySelector('.modal').remove();
+    document.querySelector(".modal").remove();
   }
-  
+}
+
+// example for created modal
+
+const addBtnElem = document.querySelector(".header__add");
+
+addBtnElem.addEventListener("click", () => {
+  new Modal({
+    targetElem: ".header__add",
+    selectorOut: "body",
+    html: htmlToModal(),
+  }).create();
+});
+
+function htmlToModal() {
+  return `<input class='input-card' type='text' placeholder='Ведіть id канала' /><button class='add-card'>Добавити</button>`;
+}
+
+//========================================================================================================================================================
+//channels insert
+if (localStorage.getItem("cards")) {
+  const main = document.querySelector(".main");
+  document.querySelector(".hello").remove();
+
+  JSON.parse(localStorage.getItem("cards")).forEach((card) => {
+    main.innerHTML += `<div>${card}</div>`;
+    //body for insert
+  });
 }
 
 
-// example for created modal
-const modal = new Modal({
-  targetElem: '.header__add',
-  selectorOut: "body",
-  html: 'htmlToModal()',
-});
+window.onload = function loadClient() {
+  gapi.client.setApiKey("AIzaSyCMQPA4JFFHpFPK-sr00Z6YRHeyJr-3_iA");
+  return gapi.client
+    .load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+    .then(
+      function () {
+       console.log('ok')
+      },
+      function (err) {
+        console.error("Error loading GAPI client for API", err);
+      }
+    );
+};
 
-const addBtnElem = document.querySelector('.header__add');
+function getData() {
+  let data ;
+ function loadClient() {
+    gapi.client.setApiKey("AIzaSyCMQPA4JFFHpFPK-sr00Z6YRHeyJr-3_iA");
+    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  function execute() {
+    return gapi.client.youtube.channels.list({
+      "part": [
+        "snippet,contentDetails,statistics"
+      ],
+      "id": [
+        "UC_x5XG1OV2P6uZZ5FSM9Ttw"
+      ]
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                data =  {
+                  title: response.result.items[0].snippet.title,
+                  img: response.result.items[0].snippet.thumbnails.default.url,
+                }
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  gapi.load("client:auth2");
+  loadClient()
+  execute()
 
-addBtnElem.addEventListener('click', modal.create);
+  return data;
+}
