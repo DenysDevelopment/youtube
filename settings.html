@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YT Project</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+      defer
+    ></script>
+    <script src="./js/index.js" defer></script>
+  </head>
+
+  <body>
+    <div class="cash-save">
+      <div class="cash-save__body">
+        <div class="cash-save__text">Lorem ipsum dolor sit amet.</div>
+        <button class="cash-save__button cash-save__button-y btn">YES</button>
+        <button class="cash-save__button cash-save__button-n btn">NO</button>
+      </div>
+    </div>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__body">
+            <a href="/" class="logo"><span>YT</span><span>Project</span></a>
+            <nav class="menu">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a href="select-item.html" class="menu__link"
+                    >YouTube Аналітика</a
+                  >
+                </li>
+                <li class="menu__item disabled">
+                  <a href="settings.html" class="menu__link">Настройкі</a>
+                </li>
+              </ul>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="widgets">
+          <div class="container">
+            <h2 class="section-title">Настройкі</h2>
+            <div class="widgets__body">
+              <div class="widgets__card widgets-card">
+                <h3 class="widgets-card__title">Використання кешу</h3>
+                <hr class="widgets-card__line" />
+                <div class="widgets-card__content">
+                  <button class="btn">Використовувати</button>
+                  <button class="btn">Відмінити використання кешу</button>
+                </div>
+              </div>
+              <div class="widgets__card widgets-card">
+                <h3 class="widgets-card__title">Шлях до кешу</h3>
+                <hr class="widgets-card__line" />
+                <div class="widgets-card__content">
+                  <input type="text" placeholder="Шлях" />
+                  <p>Путь зараз: Lorem, ipsum dolor.</p>
+                </div>
+              </div>
+              <div class="widgets__card widgets-card">
+                <h3 class="widgets-card__title">Затрачаний час</h3>
+                <hr class="widgets-card__line" />
+                <div class="widgets-card__content">224 секунд</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <p>
+            Web Developers Maksymuck Denys, Hlivchuk Taras and Yulliya Silchuck
+          </p>
+          <p>&copy; Copyright 2021. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

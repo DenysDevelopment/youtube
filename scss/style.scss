@@ -3,9 +3,10 @@
 
 @import "_vars";
 
-.disaled {
+.disabled {
   opacity: 0.5;
   filter: grayscale(1);
+  pointer-events: none;
 }
 
 *,
@@ -32,7 +33,7 @@ body {
 }
 
 .main {
-  flex: 1 1 auto;
+  // flex: 1 1 auto;
 }
 
 body::-webkit-scrollbar {
@@ -120,6 +121,12 @@ body {
   transition: all 0.3s;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.2);
+
+  &__add {
+    margin-right: auto;
+    margin-left: 20px;
+  }
+
   &__body {
     display: flex;
     justify-content: space-between;
@@ -272,6 +279,32 @@ body {
   height: 0;
 }
 
+.switch._dark {
+  input + .slider {
+    background-color: #cecece;
+  }
+
+  input + .slider {
+    box-shadow: 0 0 1px rgb(190, 190, 190);
+  }
+
+  input + .slider:before {
+    transform: translateX(26px);
+  }
+}
+
+input:checked + .slider {
+  background-color: #cecece;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(190, 190, 190);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
 .slider {
   position: absolute;
   cursor: pointer;
@@ -294,18 +327,6 @@ body {
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #cecece;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px rgb(190, 190, 190);
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
 }
 
 //==================================================================================================
@@ -587,6 +608,149 @@ body.theme-toggle #preloader {
     img {
       width: 50%;
     }
+  }
+}
+
+//========================================================================================================================================================
+body {
+  padding-bottom: 120px;
+  height: 2000px;
+}
+
+.cash-save {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  background: rgba(196, 196, 196, 0.2);
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  text-align: center;
+
+  height: 120px;
+
+  padding: 20px 0;
+  // .cash-save__body
+  &__body {
+  }
+  // .cash-save__text
+  &__text {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  // .cash-save__button
+  &__button {
+    font-size: 15px;
+  }
+  // .cash-save__button-y
+  &__button-y {
+    border-color: rgb(87, 211, 15);
+    font-size: 20px;
+  }
+  // .cash-save__button-n
+  &__button-n {
+    margin-left: 50px;
+    border: 0;
+  }
+}
+.btn {
+}
+
+//========================================================================================================================================================
+
+.widgets {
+  // .widgets__body
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+.widgets-card {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  &__title {
+  }
+  // .widgets-card__line
+  &__line {
+    border: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+  }
+  // .widgets-card__content
+  &__content {
+  }
+}
+
+//========================================================================================================================================================
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    transform: translateX(-100%);
+    animation: fadeInLeft 0.5s forwards;
+  }
+
+  &__body {
+    position: relative;
+    width: 500px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    transform: translateX(100%);
+    animation: fadeInLeft 1s forwards;
+    overflow: auto;
+    color: #fff;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 17px;
+    background: transparent;
+    font-size: 40px;
+    border: 0;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+@keyframes fadeInLeft {
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes fadeInRight {
+  100% {
+    transform: translate(0);
   }
 }
 
